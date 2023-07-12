@@ -33,6 +33,7 @@ class CurrencyConverterController extends Controller
         $symbol = ['TWD' => '$','JPY' => '¥','USD' =>  '$'];
 
         $data = $request->collect();
+        $httpStatusCode = 400;
         $msg = [
             'msg' => 'error: ',
         ];
@@ -65,14 +66,14 @@ class CurrencyConverterController extends Controller
         } 
 
         $amount = number_format(round($data['amount'] * $targetCurrency, 2), 2);
-        
+        $httpStatusCode = 200;
         $msg = [
             'msg' => 'success',
             'amount' => $symbol[$data['target']] . $amount,
         ];
 
         End:
-        return response()->json($msg);
+        return response()->json($msg, $httpStatusCode);
     }
 
 }
