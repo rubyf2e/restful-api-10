@@ -2,7 +2,13 @@
 ##### 轉換金額將四捨五入到小數點第二位,且轉換後的金額顯示格式以逗點分隔做為千分位表示,如 123,456.78
 ##### 目前支援匯率：TWD、JPY、USD
 
-[GET]  /api/currencyConverter?source={$source}&target={$target}&amount={$amount} 
+[GET]  /api/currencyConverter?source={$source}&target={$target}&amount={$amount}      
+      
+ 
+驗證成功 Http Status Code = 200;       
+驗證失敗 Http Status Code = 400;     
+
+
       
 
 ### 匯率資料
