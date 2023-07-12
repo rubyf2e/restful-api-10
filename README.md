@@ -50,32 +50,35 @@
 
 #### Postman 執行成功結果
 
-<img width="772" alt="截圖 2023-07-13 上午2 48 19" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/e42bc621-5bb2-4b61-9fca-b75e1e022eaa">      
+<img width="772" alt="截圖 2023-07-13 上午2 48 19" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/ff48a6a2-3086-4417-aced-5a8674d9ef69">      
+
+
        
      
 
 #### Postman 執行失敗結果
 
 ##### source 資料錯誤
-<img width="642" alt="截圖 2023-07-13 上午2 50 42" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/1261aa0a-148a-41f7-8e89-7736232a1328">       
-        
-     
-##### target 資料錯誤
-<img width="712" alt="截圖 2023-07-13 上午2 57 30" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/3b52572b-f754-48f3-bd26-3d7e58007fb8">         
+
+<img width="642" alt="截圖 2023-07-13 上午2 50 42" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/2e18a117-5572-4340-835f-2ff96aece378">     
+
+
+##### target 資料錯誤         
+<img width="712" alt="截圖 2023-07-13 上午2 57 30" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/5a51e83b-534f-4842-a282-dfdf22a5c529">    
+
 
       
-##### amount 貨幣符號與 source 不符
-<img width="683" alt="截圖 2023-07-13 上午2 49 36" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/e6ba2500-f543-4c8b-9309-71108c4d886b">        
+##### amount 貨幣符號與 source 不符   
      
+<img width="683" alt="截圖 2023-07-13 上午2 49 36" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/f1abbaaa-b46a-48fb-801a-8459970ec72e">    
+
 
      
 ##### amount資料錯誤
-<img width="686" alt="截圖 2023-07-13 上午2 57 39" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/0ca2be69-c657-426f-9790-2f0088f24be5">        
-       
-
+<img width="686" alt="截圖 2023-07-13 上午2 57 39" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/4b4b4b54-8272-4bf5-a500-ee558dc2db7f">     
      
-##### amount資料錯誤
-<img width="672" alt="截圖 2023-07-13 上午2 57 50" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/cfaed585-8669-4200-a467-314f4330b141">       
-        
-  
+##### amount資料錯誤     
+<img width="672" alt="截圖 2023-07-13 上午2 57 50" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/c87c5d0c-07e2-4be3-bd3a-2c3f096daf29">     
+
+
        
