@@ -22,7 +22,10 @@ class CurrencyConverterTest extends TestCase
     {
     	$this->setResponse();
 
-    	$this->response->assertStatus(200);
+    	$this->response->assertStatus(200)->assertExactJson([
+    		'msg' => 'success',
+    		'amount' => '¥170,496.53',
+    	]);
     }
 
     public function test_error_source()
