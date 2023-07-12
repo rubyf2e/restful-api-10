@@ -1,4 +1,6 @@
 ## 提供匯率轉換的 API
+##### 轉換金額將四捨五入到小數點第二位,且轉換後的金額顯示格式以逗點分隔做為千分位表示,如 123,456.78
+##### 目前支援匯率：TWD、JPY、USD
 
 [GET]  /api/currencyConverter?source={$source}&target={$target}&amount={$amount} 
       
