@@ -1,64 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## 提供匯率轉換的 API
+##### 轉換金額將四捨五入到小數點第二位,且轉換後的金額顯示格式以逗點分隔做為千分位表示,如 123,456.78
+##### 目前支援匯率：TWD、JPY、USD
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[GET]  /api/currencyConverter?source={$source}&target={$target}&amount={$amount}      
+      
+ 
+驗證成功 Http Status Code = 200;       
+驗證失敗 Http Status Code = 400;     
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+      
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 匯率資料
+```
+{
+    "currencies": {
+        "TWD": {
+            "TWD": 1,
+            "JPY": 3.669,
+            "USD": 0.03281
+            },
+        "JPY": {
+            "TWD": 0.26956,
+            "JPY": 1,
+            "USD": 0.00885
+            },
+        "USD": {
+            "TWD": 30.444,
+            "JPY": 111.801,
+            "USD": 1
+        }
+    }
+}
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+##### 輸入範例:
+```
+?source=USD&target=JPY&amount=$1,525
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##### 輸出範例:
+```
+{
+    "msg": "success",
+    "amount": "¥170,496.53"
+}
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Postman 執行成功結果
 
-## Laravel Sponsors
+<img width="772" alt="截圖 2023-07-13 上午2 48 19" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/e42bc621-5bb2-4b61-9fca-b75e1e022eaa">      
+       
+     
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Postman 執行失敗結果
 
-### Premium Partners
+##### source 資料錯誤
+<img width="642" alt="截圖 2023-07-13 上午2 50 42" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/1261aa0a-148a-41f7-8e89-7736232a1328">       
+        
+     
+##### target 資料錯誤
+<img width="712" alt="截圖 2023-07-13 上午2 57 30" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/3b52572b-f754-48f3-bd26-3d7e58007fb8">         
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+      
+##### amount 貨幣符號與 source 不符
+<img width="683" alt="截圖 2023-07-13 上午2 49 36" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/e6ba2500-f543-4c8b-9309-71108c4d886b">        
+     
 
-## Contributing
+     
+##### amount資料錯誤
+<img width="686" alt="截圖 2023-07-13 上午2 57 39" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/0ca2be69-c657-426f-9790-2f0088f24be5">        
+       
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+     
+##### amount資料錯誤
+<img width="672" alt="截圖 2023-07-13 上午2 57 50" src="https://github.com/rubyf2e/restful-api-10/assets/33201416/cfaed585-8669-4200-a467-314f4330b141">       
+        
+  
+       
