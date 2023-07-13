@@ -11,7 +11,7 @@ class CurrencyConverterTest extends TestCase
     private $source = 'USD';
     private $target = 'JPY';
     private $amount = '$1,525';
- 		private $response;
+ 	private $response;
 
     private function setResponse() 
     {
